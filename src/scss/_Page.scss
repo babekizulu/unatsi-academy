@@ -1,0 +1,82 @@
+.page {
+    position: relative;
+    top: 100px;
+    bottom: 50px;
+}
+
+.video {
+    max-height: 800px;
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.main-hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        width: 900px;
+        font-size: 5rem;
+        font-weight: 700;
+        color: $light;
+        text-align: center;
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $dark;
+        border: 1px solid $light;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+    }
+}
+
+.hero {
+    @include flexColumn;
+    padding: 2rem;
+    color: $light;
+
+    h2 {
+        font-size: 4rem;
+        font-weight: 700;
+        color: $light;
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $light;
+        text-align: justify;
+    }
+}
+
+.b {
+    background: $dark;
+    color: $light;
+}
+
+.ba {
+    background: $dark-active;
+    color: $light;
+}
+
+.w {
+    background: $light;
+    color: $dark;
+    h2 {
+        color: $dark;
+    }
+    p {
+        color: $dark;
+    }
+}

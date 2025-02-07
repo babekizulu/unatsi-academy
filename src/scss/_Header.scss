@@ -1,0 +1,51 @@
+@import 'utils';
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $dark;
+    text-decoration: none;
+    color: $dark-active;
+    margin-left: 2rem;
+}
+
+.navigation {
+    ul {
+        @include flexRow;
+        list-style: none;
+    }
+
+    li {
+        padding: 0 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: $dark;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: $eio;
+
+        &:hover {
+            color: $dark-active;
+            border-bottom: 1px solid $dark-active;
+        }
+    }
+}
+
+.highlighted {
+    color: $dark-active;
+    border-bottom: 1px solid $dark-active;
+}

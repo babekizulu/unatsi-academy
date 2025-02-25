@@ -1,0 +1,88 @@
+@import 'utils';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    background-color: #1c2c80;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $dark;
+    text-decoration: none;
+    color: $dark-active;
+    margin-left: 2rem;
+    margin-bottom: 5%;
+}
+
+.navigation {
+    ul {
+        @include flexRow;
+        list-style: none;
+    }
+
+    li {
+        padding: 0 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: $dark;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: $eio;
+
+        &:hover {
+            color: $dark-active;
+            border-bottom: 1px solid $dark-active;
+        }
+    }
+}
+
+.highlighted {
+    color: $dark-active;
+    border-bottom: 1px solid $dark-active;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.headertop {
+    position: fixed;
+    /* Fix it to the top of the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Full width */
+    z-index: 10;
+    /* Higher than the navigation */
+    background-color: #1c2c80;
+    /* Background color */
+    padding: 10px 20px;
+    /* Add some padding */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for separation */
+}
+
+// .header {
+//     // margin-top: 60px;
+//     /* Push the navigation down so it doesn't overlap the Topbar */
+// }

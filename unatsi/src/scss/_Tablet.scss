@@ -1,0 +1,31 @@
+@media screen and (max-width: 912px) {
+    .main-hero {
+        height: 700px;
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .hero {
+        padding: 1rem;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .main-hero {
+        height: 500px;
+        h1 {
+            font-size: 2rem;
+        }
+    }
+    .navigation {
+        display: none;
+    }
+}

@@ -5,23 +5,23 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100px;
+    height: 60px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     position: fixed;
-    top: 0;
+    top: 40px;
     z-index: 3;
     background-color: #1c2c80;
 }
 
 .logo {
+    @include flexCenter;
     font-size: 1.4rem;
     font-weight: 700;
     color: $dark;
     text-decoration: none;
-    color: $dark-active;
+    color: $light;
     margin-left: 2rem;
-    margin-bottom: 5%;
 }
 
 .navigation {
@@ -36,7 +36,7 @@
 
     a {
         text-decoration: none;
-        color: $dark;
+        color: $light;
         font-size: 1.2rem;
         font-weight: 500;
         transition: $eio;

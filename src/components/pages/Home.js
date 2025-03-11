@@ -1,57 +1,59 @@
-import { useEffect, useState } from "react";
-
 function Home() {
-    const images = [
+    /*const images = [
         "https://stemistic.wordpress.com/wp-content/uploads/2019/09/technology-trends-for-business_0.jpg",
-        // "https://www.shutterstock.com/image-illustration/internet-business-technology-network-conceptscience-260nw-2127830453.jpg",
-        // "https://www.shutterstock.com/image-illustration/science-technology-engineering-math-stem-260nw-2412153741.jpg"
-        // "https://t3.ftcdn.net/jpg/06/08/82/50/360_F_608825085_MuQopoWCJQJ8BUa4u2z1DECXtkuoVLmj.jpg"
-        // "https://www.shutterstock.com/image-photo/science-technology-engineering-math-stem-260nw-2494978333.jpg",
-        // "https://i.ibb.co/rKNz8sn6/429825376-366680422991268-8864914975867708755-n-removebg-preview.png"
-        // "https://i.ibb.co/7xYdfc02/Minimalist-Simple-Motivational-Quote-Instagram-Post.png"
-        // "https://i.ibb.co/nsYdsbZq/Minimalist-Simple-Motivational-Quote-Instagram-Post-3.png"
-        // "https://i.ibb.co/XrCgshZv/Minimalist-Simple-Motivational-Quote-Instagram-Post-4.png"
-        // "https://i.ibb.co/n8wVxS1q/Minimalist-Simple-Motivational-Quote-Instagram-Post-5.png"
         "https://i.ibb.co/Jj8nZDGs/Minimalist-Simple-Motivational-Quote-Instagram-Post-6.png",
     ];
 
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const galleryImages = [
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/475533132_595252016800773_8340295728726541998_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=S5Z6aHoIWaEQ7kNvgH8fnrK&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AXeGe07phq0bCmMyG2lpEYC&oh=00_AYAegS0eqoPcgHOFZ6iq0N51TTkl8wXOVJaSIraVTcjtkA&oe=67ADB620',
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/475991605_595808443411797_5430022892357070189_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=J6B-waFeDDIQ7kNvgH7LVsW&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=A1JfGJn7XsPKvFhKDyUqIkZ&oh=00_AYBwWrZiCuBIPwVA6II909Lee6TWXh7mcbYIapiABVMqwQ&oe=67ADAEDA',
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/476649748_600685179590790_4467189503393629721_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=oqHKfs0ZuxQQ7kNvgFkPlHD&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=ANM7m9qoWEuksYPzCfOrcSm&oh=00_AYBnuPVa7TyztzcZAchxZs1U7racci7MuiHOVpg3I_OTWw&oe=67ADA4FB',
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/392805909_280464011612910_4126557987310364148_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Kzp2rDgllVgQ7kNvgFajf-J&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AVdczqn2AjdoFI7ufbWFBKf&oh=00_AYD29siUJjRoqGAL7G_0rLnALvPzvzv7UsdzEHy3JEPueg&oe=67AC56CB',
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/395154063_287952997530678_3849034137861769847_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=XDaFSVYBXg4Q7kNvgEFwBVt&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AMSawPmxtP9ZrZ8x-Uqziu8&oh=00_AYAV9idudocTyu0AhdE6URujh0fq6LYPbHeFQTTF8aR3cw&oe=67ADAFDB',
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/429825376_366680422991268_8864914975867708755_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=h5hZ76KZotoQ7kNvgHypLs6&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AiW0NVGTS01V_X9LGNYqUnD&oh=00_AYAxULx4RTkYiu4wAmKS0hIeymiw_2qYemTmNBhV_MF8ng&oe=67AC4D95',
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/429809978_366680739657903_8817557429376050006_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hWE-Fin1BOYQ7kNvgGICkMk&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AQVNkd7vMZoGvjtIVBa2tc2&oh=00_AYCvciu79IXRmj2WvOkOS5ZSXH9qNFf7c59Ow4ijjGJHyQ&oe=67AC4199',
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/429678597_366680806324563_2788332816125661627_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hduqn5yIGCAQ7kNvgEC4NiV&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AQVNkd7vMZoGvjtIVBa2tc2&oh=00_AYDsyWTnfJ0FlAt4c_c0prOVTuvHnp1rDoMSZUkHE9ENgw&oe=67AC5C7F',
+        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/475431357_595807876745187_6252760102262360061_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=uZFrXGinjmYQ7kNvgFl0M1s&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=Ah6eqsNQ70oldnrcE20y8Ef&oh=00_AYAm4SQv9OAGgd8YFzCgKU4dH3IU2diQQt2NzG3kGuKCag&oe=67AC49E4',
+    ];*/
 
-    useEffect(() => {
+    //const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // Styles object for better organization
+    /*const styles = {
+        galleryImage: {
+            width: '100%',
+            height: '200px',
+            objectFit: 'cover',
+            borderRadius: '8px',
+            transition: 'transform 0.3s ease',
+        }
+    };*/
+
+    // Render gallery images with proper styling
+    /*const renderedGallery = galleryImages.map((image, index) => (
+        <div key={index} className="gallery-image">
+            <img 
+                src={image} 
+                alt={`Gallery ${index + 1}`} 
+                style={styles.galleryImage}
+                onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
+                onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
+            />
+        </div>
+    ));*/
+
+    // Image carousel effect
+    /*useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 15000);
+        }, 5000); // Changed from 15000 to 5000 for better user experience
         return () => clearInterval(interval);
-    }, [images.length]);
+    }, [images.length]);*/
 
     return (
         <section className="page">
             <article className="main-hero" style={{ position: "relative", overflow: "hidden", height: "800px" }}>
-                <div
-                    style={{
-                        position: "absolute",
-                        width: "100%",
-                        height: "115%",
-                        backgroundImage: `url(${images[currentImageIndex]})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        transition: "opacity 1s ease-in-out",
-                    }}
-                >
-
-                    <img
-                        src="https://i.ibb.co/wZTSvm2b/324927416-1797086837334568-8246797397037440777-n-removebg-preview.png"
-                        alt="UNATSI ACADEMY Logo"
-                        style={{
-                            width: "100px",
-                            height: "auto",
-                            marginTop: "5%",
-                            marginLeft: "2%"
-                        }}
-                    />
-
-                </div>
-
+                <div className="hero-image"></div>
                 <h1
                     style={{
                         position: "absolute",
@@ -67,12 +69,12 @@ function Home() {
                     }}
                 >
                     Welcome to Unatsi Academy –<br />
-                    <span style={{ fontWeight: "bold", color: "red" }}>Inspiring Innovation Through STEM</span><br />
+                    <span style={{ fontWeight: "bold", color: "#fff" }}>Inspiring Innovation Through STEM</span><br />
                     <small
                         style={{
-                            fontSize: "1rem",
-                            color: "red",
-                            fontWeight: "300",
+                            fontSize: "1.2rem",
+                            color: "#fff",
+                            fontWeight: "400",
                             display: "block",
                             marginTop: "1rem",
                         }}
@@ -213,7 +215,7 @@ function Home() {
                 </p>
             </article>
 
-            <article
+            {/* <article
                 style={{
                     backgroundColor: '#071b44',
                     padding: '20px',
@@ -243,35 +245,9 @@ function Home() {
                         gap: '10px',
                     }}
                 >
-                    {[
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/475533132_595252016800773_8340295728726541998_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=S5Z6aHoIWaEQ7kNvgH8fnrK&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AXeGe07phq0bCmMyG2lpEYC&oh=00_AYAegS0eqoPcgHOFZ6iq0N51TTkl8wXOVJaSIraVTcjtkA&oe=67ADB620',
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/475991605_595808443411797_5430022892357070189_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=J6B-waFeDDIQ7kNvgH7LVsW&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=A1JfGJn7XsPKvFhKDyUqIkZ&oh=00_AYBwWrZiCuBIPwVA6II909Lee6TWXh7mcbYIapiABVMqwQ&oe=67ADAEDA',
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/476649748_600685179590790_4467189503393629721_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=oqHKfs0ZuxQQ7kNvgFkPlHD&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=ANM7m9qoWEuksYPzCfOrcSm&oh=00_AYBnuPVa7TyztzcZAchxZs1U7racci7MuiHOVpg3I_OTWw&oe=67ADA4FB',
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/392805909_280464011612910_4126557987310364148_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Kzp2rDgllVgQ7kNvgFajf-J&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AVdczqn2AjdoFI7ufbWFBKf&oh=00_AYD29siUJjRoqGAL7G_0rLnALvPzvzv7UsdzEHy3JEPueg&oe=67AC56CB',
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/395154063_287952997530678_3849034137861769847_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=XDaFSVYBXg4Q7kNvgEFwBVt&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AMSawPmxtP9ZrZ8x-Uqziu8&oh=00_AYAV9idudocTyu0AhdE6URujh0fq6LYPbHeFQTTF8aR3cw&oe=67ADAFDB',
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/429825376_366680422991268_8864914975867708755_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=h5hZ76KZotoQ7kNvgHypLs6&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AiW0NVGTS01V_X9LGNYqUnD&oh=00_AYAxULx4RTkYiu4wAmKS0hIeymiw_2qYemTmNBhV_MF8ng&oe=67AC4D95',
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/429809978_366680739657903_8817557429376050006_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hWE-Fin1BOYQ7kNvgGICkMk&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AQVNkd7vMZoGvjtIVBa2tc2&oh=00_AYCvciu79IXRmj2WvOkOS5ZSXH9qNFf7c59Ow4ijjGJHyQ&oe=67AC4199',
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/429678597_366680806324563_2788332816125661627_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=hduqn5yIGCAQ7kNvgEC4NiV&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=AQVNkd7vMZoGvjtIVBa2tc2&oh=00_AYDsyWTnfJ0FlAt4c_c0prOVTuvHnp1rDoMSZUkHE9ENgw&oe=67AC5C7F',
-                        'https://scontent.fmts2-2.fna.fbcdn.net/v/t39.30808-6/475431357_595807876745187_6252760102262360061_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=uZFrXGinjmYQ7kNvgFl0M1s&_nc_zt=23&_nc_ht=scontent.fmts2-2.fna&_nc_gid=Ah6eqsNQ70oldnrcE20y8Ef&oh=00_AYAm4SQv9OAGgd8YFzCgKU4dH3IU2diQQt2NzG3kGuKCag&oe=67AC49E4',
-                    ].map((url, index) => (
-                        <div
-                            key={index}
-                            style={{
-                                overflow: 'hidden',
-                                borderRadius: '10px',
-                                border: '1px solid #ddd',
-                                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-                            }}
-                        >
-                            <img
-                                src={url}
-                                alt={`Gallery`}
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                            />
-                        </div>
-                    ))}
+                    {renderedGallery}
                 </div>
-            </article>
+            </article> */}
 
             <article
                 style={{

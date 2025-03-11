@@ -30,7 +30,7 @@ function Topbar() {
                         <Phone size={18} color="#28a745" /> {/* Phone Icon */}
                         <span>Contact: +268 765 95317</span>
                     </div>
-                    <div className="location-animation" style={{ display: "flex", alignItems: "center", gap: "8px", transform: "translateX(-50%)" }}>
+                    <div className="location-animation" style={{ display: "flex", alignItems: "center", gap: "8px", transform: "translateX(-50%)", marginLeft: "4rem"}}>
                         <MapPin size={18} color="#dc3545" /> {/* Location Icon */}
                         <span>Location: Lower Vusweni H108</span>
                     </div>

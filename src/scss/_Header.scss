@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 60px;
+    height: 100px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     position: fixed;
@@ -16,22 +16,23 @@
 
 .logo {
     @include flexCenter;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: $dark;
-    text-decoration: none;
-    color: $light;
-    margin-left: 2rem;
+    img {
+        width: 100px;
+        height: auto;
+        margin-left: 2rem;
+    }
 }
 
 .navigation {
     ul {
-        @include flexRow;
+        @include flexRowCenter;
         list-style: none;
+        margin-right: 2rem;
     }
 
     li {
         padding: 0 1rem;
+        margin-right: 1rem;
     }
 
     a {

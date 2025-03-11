@@ -18,10 +18,10 @@ function Navigation() {
         { name: "Home", href: "/" },
         { name: "About", href: "#about" },
         { name: "Admissions", href: "#admissions" },
-        { name: "Academics", href: "#academics" },
-        { name: "School Life", href: "#school-life" },
-        { name: "Parents and Community", href: "#parents-and-community" },
-        { name: "Gallery", href: "#gallery" },
+        // { name: "Academics", href: "#academics" },
+        // { name: "School Life", href: "#school-life" },
+        // { name: "Parents and Community", href: "#parents-and-community" },
+        // { name: "Gallery", href: "#gallery" },
         { name: "Contact", href: "#contact" }
     ];
 

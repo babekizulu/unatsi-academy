@@ -279,7 +279,7 @@ function Home() {
                 </p>
 
                 <h3>Contact Information</h3>
-                <p>📞 +268 765 95317</p>
+                <p>📞 +268 765 21509</p>
                 <p>📧 info@unatsiacademy.com</p>
                 <p>📍 Unatsi Academy, Evusweni, eSwatini</p>
 

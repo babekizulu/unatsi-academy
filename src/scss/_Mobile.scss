@@ -1,0 +1,43 @@
+@media screen and (max-width: 430px) {
+
+    .logo {
+        width: 1rem;
+    }
+
+    .header {
+        width: 100vw;
+    }
+
+    .video {
+        width: 100vw;
+    }
+
+    .main-hero {
+        height: 700px;
+        h1 {
+            font-size: 1.4rem;
+        }
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .hero {
+        padding: 1rem;
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 0.8rem;
+        }
+
+        p {
+            width: 100%;
+            font-size: 0.8rem;
+            overflow-wrap: break-word;
+        }
+    }
+}
+

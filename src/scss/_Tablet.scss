@@ -1,0 +1,91 @@
+@media screen and (max-width: $bp-tablet) {
+    .page {
+        top: 80px;
+    }
+
+    .hero {
+        padding: 1.5rem;
+        
+        h1 {
+            font-size: 3.5rem;
+        }
+        
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .headline {
+        padding: 1.5rem;
+        
+        h2 {
+            font-size: 2.5rem;
+        }
+        
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .headline-content {
+        gap: 2rem;
+    }
+
+    .headline-image {
+        width: 300px;
+    }
+
+    .gallery {
+        padding: 1.5rem;
+
+        .gallery-container {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .gallery-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+    }
+
+    .contact {
+        padding: 1.5rem;
+
+        .contact-container {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .contact-form {
+            padding: 1.5rem;
+
+            .form-group {
+                input, textarea {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .modal {
+        padding: 1rem;
+
+        .modal-content {
+            .close-button {
+                font-size: 2rem;
+                top: -35px;
+            }
+        }
+    }
+}

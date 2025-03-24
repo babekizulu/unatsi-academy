@@ -1,0 +1,129 @@
+.header {
+    @include flex-row-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 3;
+    padding: 0 1rem;
+}
+
+.logo {
+    @include flex-center;
+}
+
+.navigation {
+    @include flex-center;
+    
+    ul {
+        @include flex-row-center;
+        list-style: none;
+    }
+    
+    li {
+        @include flex-center;
+    }
+
+    a {
+        @include flex-center;
+        text-decoration: none;
+        color: $secondary;
+        font-family: $ibm;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+        margin: 0 0.7rem;
+        transition: $eio;
+        &:hover {
+            text-decoration: underline;
+            transform: scale(1.1);
+            transition: $eio;
+        }
+    }
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    
+    span {
+        display: block;
+        width: 24px;
+        height: 4px;
+        background-color: $secondary;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $secondary;
+    z-index: 1000;
+    padding: 1rem;
+    
+    .close-button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        
+        span {
+            display: block;
+            width: 24px;
+            height: 4px;
+            background-color: $primary;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            
+            &:first-child {
+                transform: rotate(45deg) translate(5px, 2px);
+            }
+            
+            &:last-child {
+                transform: rotate(-45deg) translate(5px, -2px);
+            }
+        }
+    }
+    
+    ul {
+        @include flex-column-center;
+        height: 100%;
+        gap: 2rem;
+        list-style: none;
+        
+        li {
+            margin: 2rem;
+            a {
+                text-decoration: none;
+                padding: 0.8rem 2.7rem;
+                border: 3px solid $primary;
+                border-radius: 10px;
+                color: $primary;
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin: 3rem;
+                transition: $eio;
+                &:hover {
+                    background-color: $primary;
+                    color: $secondary;
+                    transition: $eio;
+                }
+                &:active {
+                    background-color: $primary;
+                    color: $secondary;
+                    transition: $eio;
+                }
+            }
+        }
+    }
+}

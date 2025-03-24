@@ -1,5 +1,6 @@
 //components
 import Link from './Link';
+import NavLink from './NavLink';
 import { useState } from 'react';
 
 function Navigation() {
@@ -12,40 +13,40 @@ function Navigation() {
     const NavItems = ({ onItemClick }) => (
         <ul>
             <li>
-                <Link href="/" onClick={onItemClick}>Home</Link>
+                <NavLink href="/" onNavigate={onItemClick}>Home</NavLink>
             </li>
             <li>
-                <Link href="/about-us" onClick={onItemClick}>About</Link>
+                <NavLink href="/about-us" onNavigate={onItemClick}>About</NavLink>
             </li>
             <li>
-                <Link href="/academics" onClick={onItemClick}>Academics</Link>
+                <NavLink href="/academics" onNavigate={onItemClick}>Academics</NavLink>
             </li>
             <li>
-                <Link href="/admissions" onClick={onItemClick}>Admissions</Link>
+                <NavLink href="/admissions" onNavigate={onItemClick}>Admissions</NavLink>
             </li>
             {/* <li>
-                <Link href="/news-and-events" onClick={onItemClick}>News</Link>    
+                <NavLink href="/news-and-events" onNavigate={onItemClick}>News</NavLink>    
             </li> */}
             <li>
-                <Link href="/gallery" onClick={onItemClick}>Gallery</Link>
+                <NavLink href="/gallery" onNavigate={onItemClick}>Gallery</NavLink>
             </li>
             {/* <li>
-                <Link href="/stem-initiatives" onClick={onItemClick}>STEM</Link>
+                <NavLink href="/stem-initiatives" onNavigate={onItemClick}>STEM</NavLink>
             </li>
             <li>
-                <Link href="/parents-corner" onClick={onItemClick}>Parents</Link>
+                <NavLink href="/parents-corner" onNavigate={onItemClick}>Parents</NavLink>
             </li> */}
             <li>
-                <Link href="/contact-us" onClick={onItemClick}>Contact</Link>
+                <NavLink href="/contact-us" onNavigate={onItemClick}>Contact</NavLink>
             </li>
             {/* <li>
-                <Link href="/partnerships" onClick={onItemClick}>Partnerships</Link>
+                <NavLink href="/partnerships" onNavigate={onItemClick}>Partnerships</NavLink>
             </li>
             <li>
-                <Link href="/student-portal" onClick={onItemClick}>Student Portal</Link>
+                <NavLink href="/student-portal" onNavigate={onItemClick}>Student Portal</NavLink>
             </li>
             <li>
-                <Link href="/staff-portal" onClick={onItemClick}>Staff Portal</Link>
+                <NavLink href="/staff-portal" onNavigate={onItemClick}>Staff Portal</NavLink>
             </li> */}
         </ul>
     );

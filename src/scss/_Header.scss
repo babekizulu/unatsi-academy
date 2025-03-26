@@ -29,7 +29,7 @@
     a {
         @include flex-center;
         text-decoration: none;
-        color: $secondary;
+        color: $primary;
         font-family: $ibm;
         font-size: 1rem;
         font-weight: 600;
@@ -37,6 +37,7 @@
         margin: 0 0.7rem;
         transition: $eio;
         &:hover {
+            color: $secondary;
             text-decoration: underline;
             transform: scale(1.1);
             transition: $eio;

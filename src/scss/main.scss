@@ -8,9 +8,9 @@
 
 body {
     @include wh100;
-    background-color: $primary;
+    background-color: $dark;
     font-family: $ral;
-    color: $secondary;
+    color: $primary;
 }
 
 .app {

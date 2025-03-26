@@ -1,7 +1,7 @@
 //components
 import Link from "./Link";
 //icons
-import logo from './icons/UNATSI_ACADEMY_59x59.svg';
+import logo from './icons/ua_white.svg';
 
 function Logo() {
     return (

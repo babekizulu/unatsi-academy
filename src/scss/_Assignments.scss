@@ -1,0 +1,151 @@
+.assignments-page {
+    width: calc(100% - 300px);
+    position: relative;
+    max-width: 1200px;
+    left: 300px;
+    padding: 2rem;
+
+    .assignments-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .loading-spinner {
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.2rem;
+        color: #777;
+    }
+
+    .error-message {
+        background-color: #fff5f5;
+        color: #e53e3e;
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid #e53e3e;
+        margin: 1rem 0;
+    }
+
+    .no-assignments {
+        background-color: #f7fafc;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        color: #4a5568;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .assignments-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .assignment-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        &.overdue {
+            border-left: 4px solid #e53e3e;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 45px 45px 0;
+                border-color: transparent #e53e3e transparent transparent;
+            }
+        }
+    }
+
+    .assignment-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+        
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 0;
+            padding-right: 1rem;
+        }
+    }
+
+    .subject-badge {
+        background-color: #ebf4ff;
+        color: #3182ce;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .assignment-description {
+        color: #4a5568;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        flex-grow: 1;
+    }
+
+    .assignment-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 1rem;
+    }
+
+    .due-date {
+        color: #718096;
+        font-size: 0.875rem;
+    }
+
+    .time-status {
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        background-color: #e6fffa;
+        color: #319795;
+        
+        &.overdue-status {
+            background-color: #fff5f5;
+            color: #e53e3e;
+        }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+        .assignments-list {
+            grid-template-columns: 1fr;
+        }
+        
+        .assignment-card {
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -32,7 +32,6 @@
         margin-bottom: 1rem;
     }
     p {
-        font-family: $ibm;
         font-size: 1.5rem;
         font-weight: 400;
         margin-bottom: 1rem;
@@ -74,7 +73,6 @@
         margin-bottom: 1rem;
     }
     p {
-        font-family: $ibm;
         font-size: 1.5rem;
     }
 }
@@ -267,3 +265,86 @@
         }
     }
 }
+
+.sign-in-container {
+    padding: 2rem;
+
+    form {
+        @include flex-column-center;
+        gap: 1rem;
+
+        input {
+            padding: 0.8rem;
+        }
+
+        button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: $ibm;
+            cursor: pointer;
+            transition: $eio;
+            &:hover {
+                background-color: $secondary-active;
+                transition: $eio;
+            }
+        }
+    }
+}
+
+.error-message {
+    color: $danger;
+    font-family: $ibm;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    padding: 2rem;
+    border-right: 1px solid $dark-active;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $secondary-active $dark-active;
+
+    ul {
+        list-style: none;
+        margin-bottom: 2rem;
+    }
+
+    li {
+        margin-bottom: 2rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: $primary;
+        font-family: $ibm;
+        font-size: 1.2rem;
+        transition: $eio;
+        padding: 0.5rem;
+        border-radius: 4px;
+        &:hover {
+            background-color: $dark-active;
+            transition: $eio;
+        }
+    }
+}
+
+.icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.student-dashboard {
+    padding: 2rem;
+    width: calc(100% - 300px);
+    position: relative;
+    left: 300px;
+}
+

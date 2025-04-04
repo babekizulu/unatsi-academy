@@ -1,0 +1,102 @@
+@import 'utils';
+
+.student-notifications {
+    width: calc(100% - 300px);
+    position: relative;
+    left: 300px;
+  padding: 2rem;
+  background-color: $dark;
+  min-height: 100vh;
+
+  h1 {
+    color: $primary;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .notification-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &.unread {
+      border-left: 4px solid $primary;
+    }
+
+    &.read {
+      opacity: 0.8;
+    }
+
+    .notification-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      h3 {
+        margin: 0;
+        color: #34495e;
+        font-size: 1.25rem;
+        flex: 1;
+      }
+
+      .notification-date {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .notification-message {
+      color: #2c3e50;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .notification-icon {
+      font-size: 1.5rem;
+
+      &.info {
+        color: #3498db;
+      }
+
+      &.warning {
+        color: #f1c40f;
+      }
+
+      &.alert {
+        color: #e74c3c;
+      }
+    }
+
+    .unread-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: $primary;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+}

@@ -41,11 +41,11 @@ function Navigation() {
             </li>
             {/* <li>
                 <NavLink href="/partnerships" onNavigate={onItemClick}>Partnerships</NavLink>
-            </li>
+            </li>*/}
             <li>
                 <NavLink href="/student-portal" onNavigate={onItemClick}>Student Portal</NavLink>
             </li>
-            <li>
+            {/* <li>
                 <NavLink href="/staff-portal" onNavigate={onItemClick}>Staff Portal</NavLink>
             </li> */}
         </ul>

@@ -1,0 +1,185 @@
+.edit-profile {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h1 {
+        margin-bottom: 2rem;
+        color: $primary;
+        font-size: 2rem;
+    }
+
+    &__header {
+        background: rgba($primary, 0.1);
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid $primary;
+        }
+
+        .profile-info {
+            h1 {
+                margin: 0;
+                font-size: 1.8rem;
+            }
+
+            .student-id {
+                color: rgba($primary, 0.7);
+                font-size: 1.1rem;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    &__form {
+        display: grid;
+        gap: 2rem;
+
+        .form-section {
+            background: rgba($primary, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba($primary, 0.1);
+
+            h2 {
+                color: $primary;
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: rgba($primary, 0.8);
+                font-weight: 500;
+            }
+
+            input, select {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                border: 1px solid rgba($primary, 0.2);
+                border-radius: 4px;
+                background: rgba($primary, 0.05);
+                color: $primary;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+
+                &:focus {
+                    outline: none;
+                    border-color: $primary;
+                    background: rgba($primary, 0.1);
+                }
+
+                &::placeholder {
+                    color: rgba($primary, 0.5);
+                }
+            }
+
+            select {
+                cursor: pointer;
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.763L10.825 4z'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 1rem center;
+                padding-right: 2.5rem;
+            }
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+
+            .btn {
+                padding: 0.75rem 1.5rem;
+                border-radius: 4px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                &--primary {
+                    background: $primary;
+                    color: $dark;
+                    border: none;
+
+                    &:hover {
+                        background: darken($primary, 10%);
+                    }
+                }
+
+                &--secondary {
+                    background: transparent;
+                    color: $primary;
+                    border: 1px solid $primary;
+
+                    &:hover {
+                        background: rgba($primary, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tablet styles
+@media (max-width: 768px) {
+    .edit-profile {
+        padding: 1rem;
+
+        &__header {
+            flex-direction: column;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        &__form {
+            .form-section {
+                padding: 1.5rem;
+            }
+        }
+    }
+}
+
+// Mobile styles
+@media (max-width: 480px) {
+    .edit-profile {
+        &__header {
+            padding: 1rem;
+        }
+
+        &__form {
+            .form-section {
+                padding: 1rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+} 

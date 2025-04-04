@@ -1,0 +1,148 @@
+.student-profile {
+  width: calc(100% - 300px);
+  position: relative;
+  left: 300px;
+  padding: 2rem;
+  background-color: $dark;
+  min-height: 100vh;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #3498db;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-info {
+      h1 {
+        color: #2c3e50;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .student-id {
+        color: #7f8c8d;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .detail-section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      h2 {
+        color: #34495e;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .detail-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .label {
+          color: #7f8c8d;
+          font-size: 0.9rem;
+        }
+
+        .value {
+          color: #2c3e50;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      &--primary {
+        background: #3498db;
+        color: white;
+        border: none;
+
+        &:hover {
+          background: #2980b9;
+          transform: translateY(-2px);
+        }
+      }
+
+      &--secondary {
+        background: transparent;
+        color: #3498db;
+        border: 2px solid #3498db;
+
+        &:hover {
+          background: #ecf0f1;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .student-profile {
+    padding: 1rem;
+
+    &__header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    &__details {
+      grid-template-columns: 1fr;
+    }
+
+    &__actions {
+      flex-direction: column;
+    }
+  }
+} 

@@ -1,0 +1,164 @@
+@import 'utils';
+
+.academic-history {
+    width: calc(100% - 300px);
+    position: relative;
+    left: 300px;
+  padding: 2rem;
+  background-color: $dark;
+  min-height: 100vh;
+
+  h1 {
+    color: $primary;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .academic-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .summary-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      i {
+        font-size: 2rem;
+        color: #3498db;
+      }
+
+      div {
+        h3 {
+          margin: 0;
+          font-size: 1rem;
+          color: #7f8c8d;
+        }
+
+        p {
+          margin: 0;
+          font-size: 1.5rem;
+          color: #2c3e50;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .academic-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .year-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+      .year-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        h2 {
+          color: #34495e;
+          margin: 0;
+          font-size: 1.5rem;
+        }
+
+        .grade-badge {
+          background-color: #3498db;
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-size: 0.9rem;
+        }
+      }
+
+      .subjects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+
+        .subject-card {
+          background-color: #f8f9fa;
+          padding: 1rem;
+          border-radius: 8px;
+
+          h3 {
+            color: #2c3e50;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+          }
+
+          .grade-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+
+            .grade {
+              font-weight: bold;
+              color: #2c3e50;
+            }
+          }
+
+          .progress-bar {
+            height: 6px;
+            background-color: #ecf0f1;
+            border-radius: 3px;
+            overflow: hidden;
+
+            .progress-fill {
+              height: 100%;
+              background-color: #3498db;
+              border-radius: 3px;
+              transition: width 0.3s ease;
+            }
+          }
+        }
+      }
+
+      .achievements {
+        h3 {
+          color: #34495e;
+          margin: 0 0 1rem 0;
+          font-size: 1.1rem;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            color: #2c3e50;
+
+            .achievement-icon {
+              color: #f1c40f;
+            }
+          }
+        }
+      }
+    }
+  }
+}

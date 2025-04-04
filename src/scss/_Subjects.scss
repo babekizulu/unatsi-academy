@@ -1,0 +1,128 @@
+.subjects-container {
+  width: calc(100% - 300px);
+  position: relative;
+  max-width: 1200px;
+  left: 300px;
+  padding: 2rem;
+
+  .subjects-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.5rem;
+      color: $primary;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $primary;
+      font-size: 1.1rem;
+    }
+  }
+
+  .subjects-grid {
+    @include grid1;
+  }
+
+  .subject-card {
+    width: 80%;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 2rem auto;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .subject-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .subject-icon {
+        font-size: 2rem;
+        color: #3498db;
+        margin-right: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin: 0;
+      }
+
+      .subject-code {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+      }
+    }
+
+    .subject-description {
+      color: #34495e;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .subject-details {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+
+      .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #7f8c8d;
+
+        svg {
+          color: #3498db;
+        }
+      }
+    }
+
+    .subject-topics {
+      h3 {
+        color: #2c3e50;
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          color: #34495e;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid #ecf0f1;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .subjects-container {
+    padding: 1rem;
+
+    .subjects-header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .subjects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -19,7 +19,7 @@ function ContactUs() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const whatsappMessage = `Name: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0AMessage: ${formData.message}`;
-        window.open(`https://wa.me/27649459612?text=${whatsappMessage}`, '_blank');
+        window.open(`https://wa.me/26876656880?text=${whatsappMessage}`, '_blank');
     };
 
     return (
